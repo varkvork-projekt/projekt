@@ -1,6 +1,6 @@
-# Disainin tähtvõrgu
+# Disainin värkvõrgu 🌐
 
-Ainetevahelise digiloovtöö projekt - IoT/värkvõrk
+Ainetevahelise digiloovtöö projekt - asjade internet (IoT)
 
 ## Lõimingained
 | Aine | Fookus |

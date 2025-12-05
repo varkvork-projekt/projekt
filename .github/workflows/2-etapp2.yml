@@ -13,7 +13,7 @@ jobs:
   create_next_issue:
     if: contains(github.event.issue.labels.*.name, 'etapp-2-idee')
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,14 +24,14 @@ jobs:
           script: |
             const fs = require('fs');
             const issueBody = fs.readFileSync('.github/steps/3-persoonad.md', 'utf8');
-            
+
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
               body: '🎉 **Etapp 2 tehtud!** Idee on paigas!'
             });
-            
+
             const issue = await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -39,17 +39,17 @@ jobs:
               body: issueBody,
               labels: ['etapp-3-persoonad']
             });
-            
+
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: issue.data.number,
               body: '👥 **Etapp 3 algas!** Nüüd mõelge kes teie stendi kasutab.'
             });
-            
+
       - name: Disable and enable workflows
         run: |
           gh workflow disable "${{ github.workflow }}"
-          gh workflow enable "3-Etapp3"
+          gh workflow enable "3-Etapp3 - Persoonad valmis"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

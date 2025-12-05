@@ -37,6 +37,6 @@ jobs:
             });
       - run: |
           gh workflow disable "${{ github.workflow }}"
-          gh workflow enable "8-Etapp8"
+          gh workflow enable "8-Etapp8 - PROJEKT VALMIS!"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

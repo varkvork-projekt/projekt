@@ -37,6 +37,6 @@ jobs:
             });
       - run: |
           gh workflow disable "${{ github.workflow }}"
-          gh workflow enable "4-Etapp4"
+          gh workflow enable "4-Etapp4 - Prototüüp valmis"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

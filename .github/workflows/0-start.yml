@@ -1,7 +1,7 @@
 name: 0-Start - Projekti alustamine
 
 on:
-  workflow_dispatch:  # Saab käsitsi käivitada
+  workflow_dispatch: # Saab käsitsi käivitada
   push:
     branches:
       - main
@@ -14,7 +14,7 @@ permissions:
 jobs:
   create_first_issue:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,7 +25,7 @@ jobs:
           script: |
             const fs = require('fs');
             const issueBody = fs.readFileSync('.github/steps/1-nouded.md', 'utf8');
-            
+
             const issue = await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -34,9 +34,9 @@ jobs:
               labels: ['etapp-1-nõuded'],
               assignees: []  // Õpilased määravad ise
             });
-            
+
             console.log('✅ Issue 1 created:', issue.data.number);
-            
+
             // Lisa kommentaar
             await github.rest.issues.createComment({
               owner: context.repo.owner,
@@ -44,9 +44,9 @@ jobs:
               issue_number: issue.data.number,
               body: '👋 **Tere tulemast!**\n\nSee on teie esimene ülesanne. Lugege läbi ja hakake tööle!\n\nKui valmis, märkige kõik ✓ ja sulgege see Issue. Järgmine ülesanne tuleb automaatselt! 🚀'
             });
-            
+
       - name: Enable workflow 1
         run: |
-          gh workflow enable "1-Etapp1"
+          gh workflow enable "1-Etapp1 - Nõuded valmis"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

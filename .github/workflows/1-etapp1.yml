@@ -13,7 +13,7 @@ jobs:
   create_next_issue:
     if: contains(github.event.issue.labels.*.name, 'etapp-1-nõuded')
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -35,7 +35,7 @@ jobs:
           script: |
             const fs = require('fs');
             const issueBody = fs.readFileSync('.github/steps/2-idee.md', 'utf8');
-            
+
             const issue = await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -43,19 +43,19 @@ jobs:
               body: issueBody,
               labels: ['etapp-2-idee']
             });
-            
+
             console.log('✅ Issue 2 created:', issue.data.number);
-            
+
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: issue.data.number,
               body: '💡 **Etapp 2 algas!**\n\nNüüd on aeg valida mida te täpselt teete. Ajurünnak!\n\nKui valmis → märkige ✓ ja sulgege Issue.'
             });
-            
+
       - name: Disable this workflow and enable next
         run: |
           gh workflow disable "${{ github.workflow }}"
-          gh workflow enable "2-Etapp2"
+          gh workflow enable "2-Etapp2 - Idee valmis"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

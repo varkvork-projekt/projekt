@@ -1,0 +1,42 @@
+name: 4-Etapp4 - Prototüüp valmis
+
+on:
+  issues:
+    types: [closed]
+
+permissions:
+  contents: read
+  issues: write
+  actions: write
+
+jobs:
+  create_next_issue:
+    if: contains(github.event.issue.labels.*.name, 'etapp-4-prototüüp')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const body = fs.readFileSync('.github/steps/5-planeerimine.md', 'utf8');
+            await github.rest.issues.createComment({
+              owner: context.repo.owner, repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: '🎉 **Etapp 4 tehtud!** Disain valmis!'
+            });
+            const issue = await github.rest.issues.create({
+              owner: context.repo.owner, repo: context.repo.repo,
+              title: 'Etapp 5: Mida vaja osta?',
+              body: body, labels: ['etapp-5-planeerimine']
+            });
+            await github.rest.issues.createComment({
+              owner: context.repo.owner, repo: context.repo.repo,
+              issue_number: issue.data.number,
+              body: '🛒 **Etapp 5 algas!** Nüüd tehke nimekiri ja eelarve!'
+            });
+      - run: |
+          gh workflow disable "${{ github.workflow }}"
+          gh workflow enable "5-Etapp5"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

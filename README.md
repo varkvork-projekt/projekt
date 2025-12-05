@@ -1,40 +1,68 @@
-# Disainin värkvõrgu 🌐
+# IoT Stendi Loomine 🔧
 
-Ainetevahelise digiloovtöö projekt - asjade internet (IoT)
+![Status](https://img.shields.io/badge/Staatus-Aktiivne-green)
+![Etapid](https://img.shields.io/badge/Etapid-8-blue)
+![Meeskond](https://img.shields.io/badge/Meeskond-3--4_õpilast-orange)
+![Kestus](https://img.shields.io/badge/Kestus-8--16_nädalat-purple)
 
-## Lõimingained
-| Aine | Fookus |
-|------|--------|
-| **Informaatika** | Programmeerimine, andurid, andmetöötlus |
-| **Füüsika** | Sensorid, mõõtmine, elektriahel |
-| **Inglise keel** | Tehniline dokumentatsioon |
+DigiTaru projekt - nutikodu demo stend kutsekooli jaoks
 
-## Projekti eesmärk
-Luua IoT lahenduse prototüüp, mis demonstreerib füüsikalisi põhimõtteid ja on dokumenteeritud nii eesti kui inglise keeles.
+## Mis see on?
 
-## Rühm
+Loome **IoT stendi** - interaktiivse õppevahendi, mis näitab kuidas nutikodu asjad töötavad.
+
+## Meeskond
+
 | Nimi | Roll | GitHub |
 |------|------|--------|
-| | | |
-| | | |
-| | | |
-| | | |
+| | Projektijuht | |
+| | Disainer | |
+| | Riistvara | |
 
-## Tähtaeg
-🗓️ 10 nädalat
+## Ajakava
+
+🗓️ **8-16 nädalat**
+
+| Etapp | Mis teeme? |
+|-------|------------|
+| 1 | Eesmärk ja nõuded |
+| 2 | Idee valimine |
+| 3 | Kes kasutab? |
+| 4 | Disain ja skeemid |
+| 5 | Eelarve ja nimekiri |
+| 6 | Ehitamine! |
+| 7 | Testimine |
+| 8 | Esitlus |
 
 ## Kiirlingid
-- 📖 [Wiki](../../wiki) - juhendid ja reeglid
-- 📋 [Issues](../../issues) - ülesanded
-- 📊 [Projects](../../projects) - töölaud
 
-## Struktuur
+- 📋 [Issues](../../issues) - ülesanded (tekivad automaatselt!)
+- 📊 [Projects](../../projects) - kanban
+
+## Juhendid (Wiki)
+
+- 🏠 [Avaleht](../../wiki) - projekti ülevaade
+- 📋 [Etapid](../../wiki/Etapid) - mida millal teha
+- 👥 [Rollid](../../wiki/Rollid) - kes mida teeb
+- ✅ [Hindamine](../../wiki/Hindamine) - kuidas hinnatakse
+- 🔧 [Töökorraldus](../../wiki/Töökorraldus) - kuidas GitHubi kasutada
+
+## Failid
+
 ```
 ├── docs/           # Dokumentatsioon
-├── src/            # Kood
-├── schematics/     # Skeemid ja pildid
+├── src/            # Kood (kui vaja)
+├── schematics/     # Skeemid ja joonised
+├── images/         # Fotod
 └── tests/          # Testiraportid
 ```
 
+## Kuidas alustada?
+
+1. Vaata [Issues](../../issues) lehte
+2. Seal on esimene ülesanne!
+3. Kui valmis → sulge Issue → järgmine tuleb automaatselt 🚀
+
 ---
-*IFI7034.DT Informaatika didaktika*
+
+*DigiTaru projekt | [Juhendaja materjalid](https://web.htk.tlu.ee/digitaru/projekt/)*

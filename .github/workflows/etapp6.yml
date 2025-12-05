@@ -1,0 +1,28 @@
+name: Etapp6
+
+on:
+  issues:
+    types: [closed]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  next:
+    if: contains(github.event.issue.labels.*.name, 'etapp6')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const body = fs.readFileSync('.github/steps/7-testimine.md', 'utf8');
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'Etapp 7: Testimine',
+              body: body,
+              labels: ['etapp7']
+            });

@@ -20,12 +20,13 @@ Kustuta vaikimisi tulbad ja loo need:
 | 👀 **Ülevaatus** | Valmis, õpetaja kontrollib |
 | ✅ **Tehtud** | Kinnitatud ja lõpetatud |
 
-## Automaatika (valikuline)
+## Automaatika
 
-Settings → Workflows → lisa:
+Settings → Workflows → lülita sisse:
 
-1. **Item added to project** → Set status to `📋 Ootel`
-2. **Item closed** → Set status to `✅ Tehtud`
+1. **Auto-add to project** → filter: `is:issue is:open`
+2. **Item added to project** → Set status to `📋 Ootel`
+3. **Item closed** → Set status to `✅ Tehtud`
 
 ## Kuidas kasutada
 

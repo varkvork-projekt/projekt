@@ -11,8 +11,8 @@ build-dir = "book"
 [output.html]
 default-theme = "light"
 preferred-dark-theme = "navy"
-git-repository-url = "https://github.com/tluhk/projekt"
-edit-url-template = "https://github.com/tluhk/projekt/edit/book/book/{path}"
+git-repository-url = "https://github.com/ORG/REPO"
+edit-url-template = "https://github.com/ORG/REPO/edit/book/book/{path}"
 
 [output.html.fold]
 enable = true

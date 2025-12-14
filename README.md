@@ -5,7 +5,7 @@
 ![Meeskond](https://img.shields.io/badge/Meeskond-3--4_õpilast-orange)
 ![Kestus](https://img.shields.io/badge/Kestus-8--16_nädalat-purple)
 
-DigiTaru projekt - nutikodu demo stend kutsekooli jaoks
+DigiTaru projekt - nutikodu demo stend kooli jaoks
 
 ## Mis see on?
 
